@@ -65,8 +65,9 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IExperimentProcessor, DefaultExperimentProcessor>();
         services.AddSingleton<IExperimentConfiguration, SimplePipExperiment>();
         services.AddSingleton<IExperimentConfiguration, RustCliDetectorExperiment>();
+        services.AddSingleton<IExperimentConfiguration, RustSbomVsCliExperiment>();
+        services.AddSingleton<IExperimentConfiguration, RustSbomVsCrateExperiment>();
         services.AddSingleton<IExperimentConfiguration, Go117DetectorExperiment>();
-        services.AddSingleton<IExperimentConfiguration, DotNetDetectorExperiment>();
 
         // Detectors
         // CocoaPods
@@ -137,6 +138,7 @@ public static class ServiceCollectionExtensions
         // Rust
         services.AddSingleton<IComponentDetector, RustCrateDetector>();
         services.AddSingleton<IComponentDetector, RustCliDetector>();
+        services.AddSingleton<IComponentDetector, RustSbomDetector>();
 
         // SPDX
         services.AddSingleton<IComponentDetector, Spdx22ComponentDetector>();
